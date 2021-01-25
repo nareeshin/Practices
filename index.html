@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Naree Shin</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container" id="module">
+  <div class="nav-wrapper">
+    <nav>
+      신나리. 92년 서울 출생.
+      <br/> 
+      <br/> 
+      브레멘에 거주하며 Hochschule für Künste Bremen에 소속되어있는 스튜디오(School of Visual Combinations)에서 공부 중이다. 시각적으로 표현될 수 있는 모든 것들에 관심을 가지며 사실적인 정보에 기반한 그래픽 디자인 작업을 지향한다. 작업을 함에 있어서는 도구의 제한을 두지 않기 위해 다양한 툴이나 방법들을 시도해보고 있으며, 코로나 사태 이후 관심사가 웹 공간으로 확장되었다.
+    <br/>
+    <br/>
+    <a href="mailto:nsin@hfk-bremen.de">nsin@hfk-bremen.de</a>
+    <br/>
+    <a href="https://www.instagram.com/shin_naree/">@shin_naree</a>
+    <br/>
+    <a href="https://nareeshin.com/"><STRIKE>https://nareeshin.com</STRIKE></a>
+    <br/>
+    <div class="image">
+    <img id="me" src="img-naree/me.jpg" alt="me">
+    </div>
+    </nav>
+ </div>
+  <div class="right-section">
+  </div>
+</div>
+<script>
+  const el = document.querySelector("#module");
+  el.addEventListener("mousemove", (e) => {
+  el.style.backgroundPositionX = -e.offsetX + "px";
+  el.style.backgroundPositionY = -e.offsetY + "px";
+});
+
+</script>
+</body>
+
+</html>
