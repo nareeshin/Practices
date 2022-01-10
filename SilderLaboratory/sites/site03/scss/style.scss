@@ -1,0 +1,36 @@
+/* Reset CSS */
+
+html, body {
+  background: #fff;
+  z-index: 1;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a, button, input, label {
+  cursor: pointer
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+
+
+
+@media screen and (max-width:500px){
+
+
+}

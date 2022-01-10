@@ -1,82 +1,31 @@
-*{
-  font-family: 'Gothic A1', sans-serif;
-}
-
-STRIKE{
-  color: gray;
-}
-
-a{
-  color: orchid;
-  cursor: pointer;
-}
-
-body{
-  margin: 0px;
-}
-
-.container{
-  cursor: crosshair;
-  position: relative;
-  border: 1.5px solid olivedrab;
+/* Reset CSS */
+html {
+  z-index: 1;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  height: 100%;
-  background-image: url("img-naree/studio.jpg");
+  height: 100vh;
+  overflow: hidden;
+  background-position: 0% 100%;
   background-size: cover;
 }
 
-.nav-wrapper{
-  position: absolute;
-  display: inline;
-  border: 1.5px solid orange;
-  width: 35%;
-  padding: 1%;
+a, button, input, label {
+  cursor: pointer;
 }
 
-nav{
-  display: inline;
-  width: 35%;
-  height: 600px;
-  left: 0px;
-  border: 1.5px solid green;
-  background-color: white;
-  /*
-  overflow: scroll;  
-  transition: background-color 1s ease-in-out, width 0.4s ease-in-out, font-size 0.4s ease-in-out;
-  background-color: white;
-  font-size: 1em;  
-  */
+/*
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
+*/
 
-.right-section{
-  margin-left: 38%;
-  border: 1.5px solid palegreen;
-  height: 750px;
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-
-img{
-  width: 400px;
-  /*transform: skew(15deg, 15deg); */
-}
-
-.image{
-  position:relative;
-  display:inline;
-  border: 1.5px solid goldenrod;
-}
-
-#me{
-  width: 200px;
-  height: auto;
-  clip-path: circle(50% at 50% 50%);
-}
-
-/* 공 튀기기 */
-canvas {  
-  width: 100%;
-  height: 100%;
-  position: absolute; 
-  top: 0%; 
-  left: 0%; 
-} 
