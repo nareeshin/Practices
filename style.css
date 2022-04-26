@@ -1,31 +1,290 @@
-/* Reset CSS */
-html {
-  z-index: 1;
-  margin: 0;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background-position: 0% 100%;
-  background-size: cover;
+@font-face {
+  font-family: 'SpoqaHanSansNeo';
+  src: url('./font/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'theseasons';
+  src: url('./font/Fontspring-DEMO-theseasons-ltit.woff') format('woff');
+}
+@font-face {
+  font-family: 'TWKLausanne-250';
+  src: url('./font/TWKLausanne-250.woff') format('woff');
 }
 
-a, button, input, label {
-  cursor: pointer;
-}
+/* 모바일 */
+@media (max-width: 768px) {
+    *{
+      overflow-x: hidden;
+    }
 
-/*
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*/
+/* loading_content */
+    .loader {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+      z-index: 99999999;
+    }
 
-ul, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    .loadingImage {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -57%);
+      z-index: 99999999;
+    }
+
+/* loading_content end */
+
+    h1, h2{
+      font-family: 'theseasons', serif;
+    }
+    
+    .content{
+      position: relative;
+      border: 1px solid black;
+    }
+
+    .names{
+      position: fixed;
+      z-index: 500;
+      /* text-shadow: rgb(255, 255, 255) 1px 0 5px; */
+      padding-top: 0%;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .text{
+      padding: 3%;
+      font-size: 3vh;
+      line-height: 2.7vh;
+      text-align: center; 
+    }
+
+    .text_en{
+      font-family: 'TWKLausanne-250', sans-serif;
+      font-size: 3vh;
+      line-height: 2.7vh;
+    }
+
+    .text_kr{
+      font-family: 'SpoqaHanSansNeo', sans-serif;
+      font-size: 2vh;
+      line-height: 3vh;
+    }
+
+    .main_image{
+      width: 100%;
+    }
+
+
+
+    .giftAnimationWrapper {
+      background: transparent;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    .giftAnimationWrapper .giftTop {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      transform-origin: top;
+      transition: all 3.5s ease-in-out;
+      z-index: 1000;
+      transform: rotateX(-360deg);
+      background-image: url(envelope_top.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .giftAnimationWrapper .giftTop.animate {
+      transform: translateY(-30vh);
+    }
+
+    .giftAnimationWrapper .giftBottom {
+      background-image: url(envelope_bottom.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      width: 100%;
+      height: 500%;
+      transition: all 7s ease-in-out;
+      z-index: 999;
+      top: 0;
+    }
+
+    .giftAnimationWrapper .giftBottom.animate{
+      position: fixed;
+      transform: translateY(80vh);
+      /* opacity: 0; */
+    }
+
+
+    @keyframes bottomFadeOut {
+      0% {
+        position: absolute;
+        bottom: -5rem;
+        opacity: 1;
+      }
+
+      75% {
+        position: absolute;
+        bottom: 100%;
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+      
+    }
+
+    .floating {
+      position: absolute;
+      opacity: 0;
+      animation-name: bottomFadeOut;
+      width: 100%;
+      animation-delay: .5s;
+      animation-duration: 18s;
+    }
+
+  /* Slide */
+  body {
+    font-family: Arial;
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  img {
+    vertical-align: middle;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    border: 1.5px solid black;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    font-size: 5vh;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    border: 1.5px solid black;
+    border-radius: 100%;
+    background-color: white;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    font-size: 2vh;
+    padding: 3%;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    padding: 0;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+    border-radius: 50%;
+    border: 1.5px solid black;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.5;
+    filter: saturate(0%);
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+    filter: saturate(100%);
+  }
+
+  /* Map */
+  #map{
+    margin-top: 10%;
+  }
+
+  }
+
+
+
+
+/* 웹 */
+@media (min-width: 769px) {
+  *{
+    overflow-x: hidden;
+  }
+
+body{
+    width: 769px;
+    height: 100vh;
+    align-content: center;
+    position: relative;
+    border: 5px solid black;
+    margin: auto;
+  }
+  
+  .names{
+    width: 768px;
+    z-index: 500;
+  }
+
+  .giftAnimationWrapper .giftBottom {
+    width: 759px;
+    align-content: center;
+    margin: auto;
+  }
+
 }

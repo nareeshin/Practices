@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <title>Sampling_01</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=uj5ywjwbaz&callback=initMap"></script>
+
+    <!--Loading_content-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <div class="loader">
+        <div class="loadingImage">
+            <img src="./img/loading.gif" id="loading_heart">
+        </div>
+    </div>
+    <script>
+        $(window).load(function () {
+            $('.loader').fadeOut();
+        });
+    </script>
+    <!--loading_content end-->
+
+
+<div class="giftAnimationWrapper">
+  <div class="giftTop"></div>
+  <div class="content">
+    <!-- <h1 class="names">
+            Cheolsu and Younghee
+            <br />2023. 05. 18       
+    </h1> -->
+    <img src="./img/names.svg" alt="" class="names">
+    <img src="./img/katelyn-macmillan.jpg" alt="" class="main_image">
+
+    <!-- <div class="text text_en">
+      With great joy you are invited to celebrate the marriage of
+      <br />Cheolsu Park & Younghee Kim
+      <br />Saturday, 23rd of September 2017 at 6 o’clock in the evening
+      <br />Hotel Dogu, Seoul
+    </div> -->
+
+    <div class="text text_kr">
+      초대합니다.
+      <br />저희 두 사람이 백년가약을 맺고자 합니다.
+      <br />
+      <br />부부의 연을 맺는 혼례식에 참석해 주시는 분들도
+      <br />멀리서 축하해 주시는 분들도
+      <br />진심 어린 축복과 응원에 감사드립니다.
+      <br />
+      서로 아껴주고 배려하며
+      행복하게 살겠습니다.
+      <br />
+      귀한 발걸음하셔서
+      <br />
+      저희의 결혼을 축하해 주세요.
+      <br />
+      <br />김철수 김영희 의 장남 <em> 철수 </em>
+      <br />박철수 박영희 의 장녀 <em> 영희 </em>
+    </div>
+
+      <br />
+      <br />
+
+
+      <h2 class="text gallery">Our Gallery</h2>
+
+            <div class="container">
+              <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="./img/couple_1.jpeg" style="width:100%">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="./img/couple_1.jpeg" style="width:100%">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="./img/couple_1.jpeg" style="width:100%">
+              </div>
+                
+              <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="./img/couple_1.jpeg" style="width:100%">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="./img/couple_1.jpeg" style="width:100%">
+              </div>
+                
+              <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="./img/couple_1.jpeg" style="width:100%">
+              </div>
+                
+              <a class="prev" onclick="plusSlides(-1)">〈</a>
+              <a class="next" onclick="plusSlides(1)">〉</a>
+
+
+              <div class="row">
+                <div class="column">
+                  <img class="demo cursor" src="./img/couple_1.jpeg" style="width:100%" onclick="currentSlide(1)">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="./img/couple_1.jpeg" style="width:100%" onclick="currentSlide(2)">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="./img/couple_1.jpeg" style="width:100%" onclick="currentSlide(3)">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="./img/couple_1.jpeg" style="width:100%" onclick="currentSlide(4)">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="./img/couple_1.jpeg" style="width:100%" onclick="currentSlide(5)">
+                </div>    
+                <div class="column">
+                  <img class="demo cursor" src="./img/couple_1.jpeg" style="width:100%" onclick="currentSlide(6)">
+                </div>
+              </div>
+            </div>
+  
+    <div class="text d_day">
+      <br />
+      <script>
+        const today = new Date();
+        const dday = new Date(2023, 04, 22);
+        const gap = dday.getTime() - today.getTime();
+        const result = Math.ceil(gap / (1000 * 60 * 60 * 24));
+        document.write("D-Day까지" + result + "일 남았습니다.")
+      </script>
+      <br />
+    </div>
+
+    <div class="text location">
+      <br />
+      찾아오시는 길
+      <br />
+
+      <div id="map" style="width:100%;height:250px;"></div>
+      <br />
+      리무진 버스
+      수원↔인천 04:50부터 20:30까지(20분 간격)
+      안양(범계) - 군포(신사거리) - 의왕(고천등기소) - 한일타운 - 구)호텔캐슬
+      전철
+      한국철도공사 기차 및 전철 시간표
+      시외버스
+      수원 버스터미널
+      서수원 버스터미널
+      수원↔잠실 
+      타는곳 ⁄ 광교한양수자인 하차 (시내버스 85번으로 환승) : 1007-1
+      수원↔양재, 강남
+      타는곳 ⁄ 수원시청역 하차 : 3002
+      타는곳 ⁄ 경기아트센터.두산위브A 정류장 하차 (도보 약 17분 소요) :  3007
+      타는곳 ⁄ KT수원지사 하차 (시내버스 61번으로 환승) : 3000 
+      수원↔사당
+      타는곳 ⁄ 수원시청역 하차 : 7002
+      타는곳 ⁄ 무궁화태영아파트 하차 (좌석 300번으로 환승) : 11-5 
+      타는곳 ⁄ 경기아트센터.두산위브A 정류장 하차 (도보 약 17분 소요) : 7001
+      타는곳 ⁄ 종합운동장 하차 (시내버스 8번으로 환승) : 7770
+    </div>
+
+    <div class="text tel">
+      <br />
+      <a href="tel:010-2576-5816">전화하기</a>
+      <br />
+    </div>
+
+
+  </div>
+  <img src="./img/balloon.png" alt="" class="floating">
+
+  <div class="giftBottom"></div>
+</div>
+
+
+<script  src="script.js"></script>
+<script>
+//map
+      var mapOptions = {
+          center: new naver.maps.LatLng(37.3595704, 127.105399),
+          zoom: 14
+      };
+
+      var map = new naver.maps.Map('map', mapOptions);
+
+      var markerOptions = {
+        position: new naver.maps.LatLng(37.3595704, 127.105399),
+        map: map
+      };
+
+      var marker = new naver.maps.Marker(markerOptions);
+
+//slide
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+</script>
+<!-- partial -->
+
+</body>
+</html>
